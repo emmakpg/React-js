@@ -2,7 +2,7 @@ import React from "react";
 
 function MainContent() {
   return (
-    <div class="content">
+    <div className="content">
       <h2>Our Mission</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, iure
