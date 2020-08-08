@@ -1,0 +1,39 @@
+h1,
+h2 {
+  color: brown;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: brown;
+  color: #fff;
+  padding: 10px 0;
+  width: 100%;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: brown;
+  color: #fff;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 0 20px;
+}

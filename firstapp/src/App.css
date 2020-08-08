@@ -1,39 +1,31 @@
-h1,
-h2 {
-  color: brown;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-.footer {
-  display: flex;
-  justify-content: center;
-  background-color: brown;
-  color: #fff;
-  padding: 10px 0;
-  width: 100%;
-  margin: 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  background-color: brown;
-  color: #fff;
-}
-
-ul {
-  display: flex;
-}
-
-li {
-  list-style: none;
-  padding: 5px 5px;
-  cursor: pointer;
-}
-
-.content {
+body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin: 10px auto;
-  padding: 0 20px;
+  min-height: 100vh;
+  background-color: #fefefe;
+}
+
+.todo-list {
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 1px -4px 16px -2px rgba(0, 0, 0, 0.3);
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Roboto";
+  font-size: 18px;
+  padding: 20px 10px 0;
+  width: 90%;
+  border-bottom: 1px solid #cecece;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
 }
