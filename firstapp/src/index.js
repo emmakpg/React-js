@@ -10,10 +10,11 @@ class App extends React.Component {
       count: 0,
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.increaseNumber = this.increaseNumber.bind(this);
+    this.resetCount = this.resetCount.bind(this);
   }
 
-  handleClick() {
+  increaseNumber() {
     // console.log("you clicked me!");
 
     this.setState((prevState) => {
@@ -23,11 +24,16 @@ class App extends React.Component {
     });
   }
 
+  resetCount() {
+    this.setState({ count: 0 });
+  }
+
   render() {
     return (
       <div className="todo-list">
         <h1 style={{ fontSize: "45px" }}>{this.state.count}</h1>
-        <button onClick={this.handleClick}>Click Me</button>
+        <button onClick={this.increaseNumber}>Increase</button>
+        <button onClick={this.resetCount}>Reset</button>
       </div>
     );
   }
