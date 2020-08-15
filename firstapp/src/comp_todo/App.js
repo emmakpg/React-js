@@ -14,9 +14,18 @@ class App extends React.Component {
   }
 
   handleChange(id) {
-    console.log("Working", id);
+    //console.log("Working", id);
 
-    this.setState({});
+    this.setState((prevState) => {
+      const updatedTodo = prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+
+      return updatedTodo;
+    });
   }
 
   render() {
