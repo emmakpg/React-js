@@ -16,14 +16,16 @@ class App extends React.Component {
     }, 1500);
   }
   render() {
-    return <Conditional isLoading={this.state.isLoading} />;
+    return (
+      <div>{this.state.isLoading ? <h3>Loading...</h3> : <Conditional />}</div>
+    );
   }
 }
 
 function Conditional(props) {
   return (
     <div>
-      {props.isLoading ? <h3>Loading</h3> : <h3>Finished Loading Content</h3>}
+      <h3>Finished Loading Content</h3>
     </div>
   );
 }
