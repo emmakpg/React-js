@@ -6,20 +6,27 @@ class App extends React.Component {
     super();
 
     this.state = {
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    alert("Working");
+    this.setState((prevState) => {
+      return prevState.isLoggedIn
+        ? (prevState.isLoggedIn = false)
+        : (prevState.isLoggedIn = true);
+    });
   }
   render() {
     return (
       <div>
-        <h3>Logged {this.state.isLoggedIn && "In"}</h3>
-        <Button handleClick={this.handleClick} />
+        <h3>Logged {this.state.isLoggedIn ? "In" : "Out"}</h3>
+        <Button
+          handleClick={this.handleClick}
+          inout={this.state.isLoggedIn ? "Logout" : "Login"}
+        />
       </div>
     );
   }
