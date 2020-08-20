@@ -6,33 +6,21 @@ class App extends React.Component {
     super();
 
     this.state = {
-      isLoading: false,
-      joke: {},
+      firstName: "",
     };
   }
-
-  componentDidMount() {
-    this.setState({ isLoading: true });
-    fetch("https://sv443.net/jokeapi/v2/joke/Any")
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ joke: data, isLoading: false });
-      });
-  }
-
   render() {
-    let joke = this.state.joke;
-
-    if (this.state.isLoading) {
-      return <h3>Loading...</h3>;
-    } else {
-      return (
-        <div>
-          <h3>{joke.setup}</h3>
-          <p>{joke.delivery}</p>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <form>
+          <input
+            type="text"
+            placeholder="First Name"
+            onChange={this.handleChange}
+          />
+        </form>
+      </div>
+    );
   }
 }
 
