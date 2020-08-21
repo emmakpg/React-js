@@ -12,15 +12,18 @@ class App extends React.Component {
       age: "",
       gender: "",
       country: "",
+      isVegetarian: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
 
-    this.setState({ [name]: value });
+    type === "checkbox"
+      ? this.setState({ [name]: checked })
+      : this.setState({ [name]: value });
   }
 
   render() {
@@ -79,6 +82,16 @@ class App extends React.Component {
             <option value="Canada">Canada</option>
             <option value="Ghana">Ghana</option>
           </select>
+          <br />
+          <label>
+            <input
+              type="checkbox"
+              name="isVegetarian"
+              checked={this.state.isVegetarian}
+              onChange={this.handleChange}
+            ></input>
+            Vegetarian
+          </label>
         </form>
         <h3>Entered Information</h3>
         <p>
@@ -100,6 +113,10 @@ class App extends React.Component {
         <p>
           <strong>Destination: </strong>
           {this.state.country}
+        </p>
+        <p>
+          <strong>Others: </strong>
+          {this.state.isVegetarian ? "Vegetarian" : null}
         </p>
       </div>
     );
