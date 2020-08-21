@@ -27,10 +27,12 @@ class App extends React.Component {
   }
 
   render() {
+    const style = { margin: 10 };
     return (
       <div className="todo-list">
         <form>
           <input
+            style={style}
             type="text"
             name="firstName"
             value={this.state.firstName}
@@ -39,6 +41,7 @@ class App extends React.Component {
           ></input>
           <br />
           <input
+            style={style}
             type="text"
             name="lastName"
             value={this.state.lastName}
@@ -47,6 +50,7 @@ class App extends React.Component {
           ></input>
           <br />
           <input
+            style={style}
             type="number"
             name="age"
             value={this.state.age}
@@ -56,6 +60,7 @@ class App extends React.Component {
           <br />
           <label>
             <input
+              style={style}
               type="radio"
               name="gender"
               value="Male"
@@ -65,6 +70,7 @@ class App extends React.Component {
           </label>
           <label>
             <input
+              style={style}
               type="radio"
               name="gender"
               value="Female"
@@ -74,6 +80,7 @@ class App extends React.Component {
           </label>
           <br />
           <select
+            style={style}
             value={this.state.country}
             name="country"
             onChange={this.handleChange}
@@ -85,6 +92,7 @@ class App extends React.Component {
           <br />
           <label>
             <input
+              style={style}
               type="checkbox"
               name="isVegetarian"
               checked={this.state.isVegetarian}
