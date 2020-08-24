@@ -1,9 +1,14 @@
 import React from "react";
+import Header from "./Header";
+import Memegenerator from "./Memegenerator";
 
-class App extends React.Component {
-  render() {
-    return <h3>Good Work</h3>;
-  }
+function App() {
+  return (
+    <div>
+      <Header />
+      <Memegenerator />
+    </div>
+  );
 }
 
 export default App;
