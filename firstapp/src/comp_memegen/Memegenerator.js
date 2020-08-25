@@ -12,6 +12,7 @@ class Memegenerator extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -20,7 +21,7 @@ class Memegenerator extends React.Component {
       .then((response) => response.json())
       .then((res) => {
         const { memes } = res.data;
-        console.log(memes[0]);
+        //console.log(memes[0]);
         this.setState({ allMemes: memes });
       });
   }
@@ -31,10 +32,18 @@ class Memegenerator extends React.Component {
     this.setState({ [name]: value });
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const num = Math.floor(Math.random() * this.state.allMemes.length);
+    const Img = this.state.allMemes[num].url;
+    this.setState({ randImage: Img });
+  };
+
   render() {
     return (
       <div>
-        <form className="meme-form">
+        <form className="meme-form" onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="topText"
@@ -54,9 +63,11 @@ class Memegenerator extends React.Component {
           <button>Generate</button>
         </form>
 
-        <h3>
-          {this.state.topText} {this.state.bottomText}
-        </h3>
+        <div className="meme">
+          <img src={this.state.randImage} alt="" />
+          <h2 className="top">{this.state.topText}</h2>
+          <h2 className="bottom">{this.state.bottomText}</h2>
+        </div>
       </div>
     );
   }
