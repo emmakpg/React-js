@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Contact from "./Contact";
 import About from "./About";
+import Services from "./Services";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path="/services" component={Services} />
         </Switch>
       </div>
     </Router>

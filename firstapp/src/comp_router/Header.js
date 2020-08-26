@@ -13,6 +13,9 @@ function Header() {
           <Link style={navStyle} to="/contact">
             <li>Contact</li>
           </Link>
+          <Link style={navStyle} to="/services">
+            <li>Services</li>
+          </Link>
         </ul>
       </nav>
     </div>
