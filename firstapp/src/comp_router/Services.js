@@ -9,7 +9,10 @@ class Services extends React.Component {
   constructor() {
     super();
 
-    this.state = { item: "" };
+    this.state = {
+      setup: "",
+      delivery: "",
+    };
   }
 
   componentDidMount() {
@@ -17,6 +20,10 @@ class Services extends React.Component {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        this.setState({
+          setup: data.setup,
+          delivery: data.delivery,
+        });
       });
   }
 
@@ -24,6 +31,8 @@ class Services extends React.Component {
     return (
       <div>
         <h3>Services Page</h3>
+        <p>{this.state.setup}</p>
+        <p>{this.state.delivery}</p>
       </div>
     );
   }
