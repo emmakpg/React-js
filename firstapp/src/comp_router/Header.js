@@ -1,12 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
+  const navStyle = { color: "#fff" };
   return (
     <div>
       <nav>
-        <ul>
-          <li>About</li>
-          <li>Contact</li>
+        <ul className="nav-link">
+          <Link style={navStyle} to="/about">
+            <li>About</li>
+          </Link>
+          <Link style={navStyle} to="/contact">
+            <li>Contact</li>
+          </Link>
         </ul>
       </nav>
     </div>
