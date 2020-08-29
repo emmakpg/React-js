@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Services() {
   useEffect(() => {
@@ -22,7 +23,11 @@ function Services() {
     >
       <h3>Services Page</h3>
       {items.map((item) => {
-        return <p key={item.idMeal}>{item.strMeal}</p>;
+        return (
+          <p key={item.idMeal}>
+            <Link to={`/mealitem/${item.idMeal}`}>{item.strMeal}</Link>
+          </p>
+        );
       })}
     </div>
   );
