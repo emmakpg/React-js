@@ -1,0 +1,15 @@
+:root {
+  --primary: #1888ff;
+}
+
+.btn-css {
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.btn-css:hover {
+  padding: 6px 18px;
+  transition: all 0.3s ease-out;
+}
