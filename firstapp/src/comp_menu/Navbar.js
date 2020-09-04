@@ -7,10 +7,27 @@ import "./Navbar.css";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
-  const closeMobileMenu = () => setClick(false);
 
+  const closeMobileMenu = () => setClick(false);
   const handleClick = () => setClick(!click);
   const handleDropdown = () => setDropdown(!dropdown);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+      console.log(dropdown);
+    }
+  };
 
   return (
     <>
@@ -27,7 +44,12 @@ function Navbar() {
               Home
             </Link>
           </li>
-          <li className="nav-item" onClick={handleDropdown}>
+          <li
+            className="nav-item"
+            // onClick={handleDropdown}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
             <Link
               to="/services"
               className="nav-links"
@@ -35,7 +57,7 @@ function Navbar() {
             >
               Services <i className="fas fa-caret-down" />
             </Link>
-            {dropdown && <Dropdown />}
+            {true && <Dropdown />}
           </li>
           <li className="nav-item">
             <Link

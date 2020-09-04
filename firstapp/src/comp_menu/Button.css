@@ -12,4 +12,7 @@
 .btn-css:hover {
   padding: 6px 18px;
   transition: all 0.3s ease-out;
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
 }

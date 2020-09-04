@@ -1,4 +1,4 @@
-const MenuItems = [
+export const MenuItems = [
   {
     title: "Food",
     path: "/food",

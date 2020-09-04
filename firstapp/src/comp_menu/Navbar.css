@@ -48,6 +48,8 @@
   background-color: #1888ff;
   border-radius: 4px;
   transition: all 0.2s ease-out;
+  color: #fff;
+  text-decoration: none;
 }
 
 .fa-bars {
