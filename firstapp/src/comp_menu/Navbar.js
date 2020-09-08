@@ -57,7 +57,7 @@ function Navbar() {
             >
               Services <i className="fas fa-caret-down" />
             </Link>
-            {true && <Dropdown />}
+            {dropdown && <Dropdown />}
           </li>
           <li className="nav-item">
             <Link
