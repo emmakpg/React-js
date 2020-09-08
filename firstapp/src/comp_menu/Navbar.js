@@ -10,7 +10,7 @@ function Navbar() {
 
   const closeMobileMenu = () => setClick(false);
   const handleClick = () => setClick(!click);
-  const handleDropdown = () => setDropdown(!dropdown);
+  //const handleDropdown = () => setDropdown(!dropdown);
 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
@@ -33,7 +33,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo">
-          EPIC
+          EPIC <i className="fas fa-firstdraft" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -46,7 +46,6 @@ function Navbar() {
           </li>
           <li
             className="nav-item"
-            // onClick={handleDropdown}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >

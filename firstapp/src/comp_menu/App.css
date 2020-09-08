@@ -1,0 +1,10 @@
+.signup,
+.contact-us,
+.services,
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  font-size: 3rem;
+}
