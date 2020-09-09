@@ -69,6 +69,9 @@
     position: relative;
   }
 
+  .fa-caret-down {
+    display: none;
+  }
   .nav-menu {
     display: flex;
     flex-direction: column;
